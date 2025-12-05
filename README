@@ -1,0 +1,21 @@
+Group Members:
+
+Zachary Pines - 1225001128
+Meadow Kubanski - 1225852019
+Jackeline Gasca - 1224883881
+Hamad Salem Mohamed Alameri - 1230985862
+
+
+Description:
+
+This program implements a blockchain based chain of custody system. Each action on an evidence item (add, checkin, checkout, remove) is stored as a block in a big blockchain file whose path follows the "BCHOC_FILE_PATH" environment variable.
+
+Blocks are stored in a binary format using struct, with AES-encrypted case IDs and item IDs, SHA-256 parent hashes, and UTC timestamps. The program enforces the state-transition rules and prevents invalid operations to avoid foul play. To check that everything is good, you can validate the entire chain using the verify command.
+
+All required commands are implemented: init, add, checkout, checkin, remove, show, history, summary, and verify. If anything goes wrong when running you get a non-zero error code.
+
+
+Generative AI Acknowledgment:
+
+Generative AI Acknowledgment: Portions of the code in this project were generated with assistance from ChatGPT, an AI tool developed by OpenAI. 
+Reference: OpenAI. (2024). ChatGPT [Large language model]. openai.com/chatgpt
