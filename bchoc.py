@@ -27,11 +27,11 @@ VALID_STATES = {"INITIAL", "CHECKEDIN", "CHECKEDOUT", "DISPOSED", "DESTROYED", "
 OWNER_ROLES = {"Police", "Lawyer", "Analyst", "Executive"}
 
 PASSWORDS = {
-    "Police": os.getenv("BCHOC_PASSWORD_POLICE", ""),
-    "Lawyer": os.getenv("BCHOC_PASSWORD_LAWYER", ""),
-    "Analyst": os.getenv("BCHOC_PASSWORD_ANALYST", ""),
-    "Executive": os.getenv("BCHOC_PASSWORD_EXECUTIVE", ""),
-    "Creator": os.getenv("BCHOC_PASSWORD_CREATOR", "")
+    "Police": "P80P",
+    "Lawyer": "L76L",
+    "Analyst": "A65A",
+    "Executive": "E69E",
+    "Creator": "C67C"
 }
 
 # -------------------------------------------------------------------------------------------------------------------------
@@ -48,7 +48,6 @@ def _aes_cipher():
 # Prompt: "Do you see an issue with these functions? I'm getting a weird autograder response:"
 
 def aes_encrypt(raw: bytes) -> bytes:
-    """Encrypt exactly one 16-byte block (pad with zeros or truncate)."""
     cipher = _aes_cipher()
     if not isinstance(raw, (bytes, bytearray)):
         raw = str(raw).encode()
@@ -58,7 +57,6 @@ def aes_encrypt(raw: bytes) -> bytes:
         raw16 = raw[:16]
     return cipher.encrypt(raw16)
 def aes_decrypt(blob: bytes) -> bytes:
-    """Decrypt one 16-byte block and return the 16 bytes."""
     cipher = _aes_cipher()
     return cipher.decrypt(blob)
 
